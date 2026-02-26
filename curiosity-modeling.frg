@@ -1,4 +1,5 @@
 #lang forge/froglet
+option run_sterling off
 
 // -----------------------------------------------------------------------------
 // Clash Royale deck-modeling scaffold for CSCI 1710 (Forge/Froglet)
@@ -152,41 +153,8 @@ pred someValidDeckExists {
 // Optional helper when you want to model the current live card pool size.
 // Keep this predicate separate so you can turn it on/off as card counts change.
 pred currentCardPoolSize {
-  #Card = 121
+  #Card = 116
 }
 
-// ---------------------------
-// Card-data input scaffold
-// ---------------------------
-
-// Practical way to "feed in" the real CR card catalog:
-// 1) Add one declaration per concrete card using `extends Card`.
-// 2) Assign each card's rarity/cost/role and side designations.
-//
-// Example pattern (leave commented until you add real cards):
-// one sig Knight extends Card {} {
-//   rarity = Common
-//   cost = E3
-//   role = MiniTank
-//   no evolutionVersion
-//   no heroVersion
-// }
-//
-// one sig ArcherQueen extends Card {} {
-//   rarity = ChampionRarity
-//   cost = E5
-//   role = WinCondition
-//   no evolutionVersion
-//   no heroVersion
-// }
-//
-// Once full data is loaded, run with:
-//   run { globalCardRules some d: Deck | validDeck[d] and currentCardPoolSize }
-// and a scope that includes enough Int bitwidth for 121 (typically 8 Int).
-
-// Starter commands for exploration.
-run someValidDeckExists for 5 Int, 20 Card, 10 Deck, 10 EvolutionVersion, 10 HeroVersion
-run {
-  globalCardRules
-  some c: Card | c.rarity = ChampionRarity and (some c.evolutionVersion or some c.heroVersion)
-} for 5 Int, 20 Card, 10 EvolutionVersion, 10 HeroVersion
+// Starter command for core model exploration (without concrete card catalog).
+run someValidDeckExists for 5 Int, 20 Card, exactly 1 Deck, 10 EvolutionVersion, 10 HeroVersion

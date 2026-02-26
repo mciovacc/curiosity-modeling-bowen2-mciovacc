@@ -1,0 +1,117 @@
+forge_id,name,rarity,role,cost,has_evolution,has_hero
+Archers,Archers,Common,AntiAirSplashDamage,E3,true,false
+Arrows,Arrows,Common,LowDamageSpell,E3,false,false
+BabyDragon,Baby Dragon,Epic,AntiAirSplashDamage,E4,true,false
+Balloon,Balloon,Epic,WinCondition,E5,false,false
+Bandit,Bandit,Legendary,WinCondition,E3,false,false
+BarbarianBarrel,Barbarian Barrel,Epic,LowDamageSpell,E2,false,true
+BarbarianHut,Barbarian Hut,Rare,WinCondition,E7,false,false
+Barbarians,Barbarians,Rare,GroundTankKiller,E5,true,false
+Bats,Bats,Common,AntiAirSplashDamage,E2,true,false
+BattleHealer,Battle Healer,Rare,GroundTankKiller,E4,false,false
+BattleRam,Battle Ram,Rare,WinCondition,E4,true,false
+Berserker,Berserker,Common,AntiGroundSplashDamage,E2,false,false
+Bomber,Bomber,Common,AntiGroundSplashDamage,E2,true,false
+BombTower,Bomb Tower,Rare,AntiGroundSplashDamage,E4,false,false
+BossBandit,Boss Bandit,ChampionRarity,WinCondition,E6,false,false
+Bowler,Bowler,Epic,AntiGroundSplashDamage,E5,false,false
+Cannon,Cannon,Common,GroundTankKiller,E3,true,false
+CannonCart,Cannon Cart,Epic,MiniTank,E5,false,false
+Clone,Clone,Epic,HighDamageSpell,E3,false,false
+DartGoblin,Dart Goblin,Rare,AntiAirSplashDamage,E3,true,false
+DarkPrince,Dark Prince,Epic,AntiGroundSplashDamage,E4,false,false
+Earthquake,Earthquake,Rare,HighDamageSpell,E3,false,false
+EliteBarbarians,Elite Barbarians,Rare,GroundTankKiller,E6,false,false
+ElectroDragon,Electro Dragon,Epic,AntiAirSplashDamage,E5,true,false
+ElectroGiant,Electro Giant,Epic,WinCondition,E7,false,false
+ElectroSpirit,Electro Spirit,Common,LowDamageSpell,E1,false,false
+ElectroWizard,Electro Wizard,Legendary,AntiAirSplashDamage,E4,false,false
+ElixirCollector,Elixir Collector,Rare,LowDamageSpell,E6,false,false
+ElixirGolem,Elixir Golem,Rare,WinCondition,E3,false,false
+Executioner,Executioner,Epic,AntiAirSplashDamage,E5,true,false
+FireSpirit,Fire Spirit,Common,LowDamageSpell,E1,false,false
+Fireball,Fireball,Rare,HighDamageSpell,E4,false,false
+Firecracker,Firecracker,Common,AntiAirSplashDamage,E3,true,false
+Fisherman,Fisherman,Legendary,GroundTankKiller,E3,false,false
+FlyingMachine,Flying Machine,Rare,AntiAirSplashDamage,E4,false,false
+Freeze,Freeze,Epic,HighDamageSpell,E4,false,false
+Giant,Giant,Rare,WinCondition,E5,false,true
+GiantSkeleton,Giant Skeleton,Epic,MiniTank,E6,false,false
+GiantSnowball,Giant Snowball,Common,LowDamageSpell,E2,true,false
+GoblinBarrel,Goblin Barrel,Epic,WinCondition,E3,true,false
+GoblinCage,Goblin Cage,Rare,GroundTankKiller,E4,true,false
+GoblinCurse,Goblin Curse,Epic,LowDamageSpell,E2,false,false
+GoblinDemolisher,Goblin Demolisher,Rare,WinCondition,E4,false,false
+GoblinDrill,Goblin Drill,Epic,WinCondition,E4,true,false
+GoblinGang,Goblin Gang,Common,GroundTankKiller,E3,false,false
+GoblinGiant,Goblin Giant,Epic,WinCondition,E6,true,false
+GoblinMachine,Goblin Machine,Legendary,WinCondition,E5,false,false
+Goblins,Goblins,Common,GroundTankKiller,E2,false,true
+Goblinstein,Goblinstein,ChampionRarity,HighDamageSpell,E5,false,false
+GoldenKnight,Golden Knight,ChampionRarity,WinCondition,E4,false,false
+Golem,Golem,Epic,WinCondition,E8,false,false
+Graveyard,Graveyard,Legendary,WinCondition,E5,false,false
+Guards,Guards,Epic,GroundTankKiller,E3,false,false
+HealSpirit,Heal Spirit,Common,LowDamageSpell,E1,false,false
+HogRider,Hog Rider,Rare,WinCondition,E4,false,false
+Hunter,Hunter,Epic,AntiAirSplashDamage,E4,true,false
+IceGolem,Ice Golem,Rare,MiniTank,E2,false,true
+IceSpirit,Ice Spirit,Common,LowDamageSpell,E1,true,false
+IceWizard,Ice Wizard,Legendary,AntiAirSplashDamage,E3,false,false
+InfernoDragon,Inferno Dragon,Legendary,AirTankKiller,E4,true,false
+InfernoTower,Inferno Tower,Rare,AirTankKiller,E5,false,false
+Knight,Knight,Common,MiniTank,E3,true,false
+LavaHound,Lava Hound,Legendary,WinCondition,E7,false,false
+Lightning,Lightning,Epic,HighDamageSpell,E6,false,false
+LittlePrince,Little Prince,ChampionRarity,WinCondition,E3,false,false
+Lumberjack,Lumberjack,Epic,GroundTankKiller,E4,true,false
+MagicArcher,Magic Archer,Legendary,AntiAirSplashDamage,E4,false,true
+MegaKnight,Mega Knight,Legendary,AntiGroundSplashDamage,E7,true,false
+MegaMinion,Mega Minion,Rare,AirTankKiller,E3,false,true
+MightyMiner,Mighty Miner,ChampionRarity,GroundTankKiller,E4,false,false
+Miner,Miner,Legendary,WinCondition,E3,false,false
+MiniPEKKA,Mini P.E.K.K.A,Rare,GroundTankKiller,E4,false,true
+MinionHorde,Minion Horde,Common,AntiAirSplashDamage,E5,false,false
+Minions,Minions,Common,AntiAirSplashDamage,E3,false,false
+Mirror,Mirror,Epic,LowDamageSpell,E2,false,false
+Monk,Monk,ChampionRarity,MiniTank,E5,false,false
+MotherWitch,Mother Witch,Legendary,WinCondition,E4,false,false
+Musketeer,Musketeer,Rare,AntiAirSplashDamage,E4,true,true
+NightWitch,Night Witch,Legendary,WinCondition,E4,false,false
+PEKKA,P.E.K.K.A,Epic,GroundTankKiller,E7,true,false
+Phoenix,Phoenix,Legendary,AntiAirSplashDamage,E4,false,false
+Poison,Poison,Epic,HighDamageSpell,E4,false,false
+Princess,Princess,Legendary,AntiGroundSplashDamage,E3,false,false
+Prince,Prince,Epic,GroundTankKiller,E5,false,false
+Rage,Rage,Epic,LowDamageSpell,E2,false,false
+RamRider,Ram Rider,Legendary,WinCondition,E5,false,false
+Rascals,Rascals,Common,AntiAirSplashDamage,E5,false,false
+Rocket,Rocket,Rare,HighDamageSpell,E6,false,false
+RoyalDelivery,Royal Delivery,Common,LowDamageSpell,E3,false,false
+RoyalGiant,Royal Giant,Common,WinCondition,E6,true,false
+RoyalGhost,Royal Ghost,Legendary,MiniTank,E3,false,false
+RoyalHogs,Royal Hogs,Common,WinCondition,E5,true,false
+RoyalRecruits,Royal Recruits,Common,MiniTank,E7,true,false
+RuneGiant,Rune Giant,Epic,WinCondition,E4,false,false
+SkeletonArmy,Skeleton Army,Epic,GroundTankKiller,E3,true,false
+SkeletonBarrel,Skeleton Barrel,Common,WinCondition,E3,true,false
+SkeletonDragons,Skeleton Dragons,Common,AntiAirSplashDamage,E4,false,false
+SkeletonKing,Skeleton King,ChampionRarity,AntiGroundSplashDamage,E4,false,false
+Skeletons,Skeletons,Common,GroundTankKiller,E1,true,false
+Sparky,Sparky,Legendary,HighDamageSpell,E6,false,false
+SpearGoblins,Spear Goblins,Common,AntiAirSplashDamage,E2,false,false
+SpiritEmpress,Spirit Empress,Legendary,AntiAirSplashDamage,E3,false,false
+SuspiciousBush,Suspicious Bush,Rare,WinCondition,E2,false,false
+Tesla,Tesla,Common,AntiAirSplashDamage,E4,true,false
+TheLog,The Log,Legendary,LowDamageSpell,E2,false,false
+ThreeMusketeers,Three Musketeers,Rare,AntiAirSplashDamage,E9,false,false
+Tombstone,Tombstone,Rare,GroundTankKiller,E3,false,false
+Tornado,Tornado,Epic,HighDamageSpell,E3,false,false
+Valkyrie,Valkyrie,Rare,AntiGroundSplashDamage,E4,true,false
+Vines,Vines,Epic,LowDamageSpell,E3,false,false
+WallBreakers,Wall Breakers,Epic,WinCondition,E2,true,false
+Witch,Witch,Epic,AntiAirSplashDamage,E5,true,false
+Wizard,Wizard,Epic,AntiAirSplashDamage,E5,true,true
+XBow,X-Bow,Epic,WinCondition,E6,false,false
+Zap,Zap,Common,LowDamageSpell,E2,true,false
+Zappies,Zappies,Common,AntiAirSplashDamage,E4,false,false
