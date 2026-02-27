@@ -2,8 +2,13 @@
 
 open "../curiosity-modeling.frg"
 
+// Test process:
+// 1) Define helper predicates that describe edge case situations
+// 2) Assert those situations are impossible when core model holds
+// 3) Add concrete example instances so behavior is easier to check
 
-// Helper predicates for property assertions.
+// If globalCardRules holds, this asks whether a champion can still carry a
+// hero or evolution designation, which should not be the case
 pred championHasHeroOrEvolutionInsideGlobalRules {
     globalCardRules
     some c: Card |
@@ -11,6 +16,8 @@ pred championHasHeroOrEvolutionInsideGlobalRules {
         (some c.evolutionVersion or some c.heroVersion)
 }
 
+// checks that champion, evolution, and hero helper predicates can be satisfied
+// with multiple cards
 pred helperPredicatesAgree {
     some disj c1, c2, c3: Card | {
         isChampion[c1]
@@ -19,10 +26,12 @@ pred helperPredicatesAgree {
     }
 }
 
+// Lightweight wrapper to make assertions easier to read
 pred helperPredicates {
     helperPredicatesAgree
 }
 
+// Illegal deck pattern, a card is actively evolved but is not chosen in the deck
 pred activeEvolutionOutsideChosenInsideValidDeck {
     some d: Deck | {
         validDeck[d]
@@ -32,6 +41,7 @@ pred activeEvolutionOutsideChosenInsideValidDeck {
     }
 }
 
+// Illegal deck pattern would be when a card is actively evolved but has no evolution version
 pred activeEvolutionWithoutVersionInsideValidDeck {
     some d: Deck | {
         validDeck[d]
@@ -41,6 +51,7 @@ pred activeEvolutionWithoutVersionInsideValidDeck {
     }
 }
 
+// Illegal deck patter for more than 2 active evolutions
 pred tooManyActiveEvolutionsInsideValidDeck {
     some d: Deck | {
         validDeck[d]
@@ -48,6 +59,7 @@ pred tooManyActiveEvolutionsInsideValidDeck {
     }
 }
 
+// Illegal deck pattern for more than 2 total cards that are champion OR hero
 pred tooManyChampionOrHeroInsideValidDeck {
     some d: Deck | {
         validDeck[d]
@@ -59,6 +71,7 @@ pred tooManyChampionOrHeroInsideValidDeck {
     }
 }
 
+// Illegal deck pattern for chosen card count is not exactly 8
 pred wrongChosenCardCountInsideValidDeck {
     some d: Deck | {
         validDeck[d]
@@ -66,12 +79,15 @@ pred wrongChosenCardCountInsideValidDeck {
     }
 }
 
+// need to check validDeck again before checking rules fully
 pred modelChecks {
     someValidDeckExists
 }
 
+
+// verify champion cards cannot have hero/evolution versions
 test suite for globalCardRules {
-    // positive example: champion has no hero/evolution; non-champion can have one
+    // positive example where champion has no hero or evolution and non-champion can have one
     example globalRulesAllowValidChampionSetup is {globalCardRules} for {
         Card = `Champ + `Flex
         Rarity = `Common + `Rare + `Epic + `Legendary + `ChampionRarity
@@ -111,7 +127,7 @@ test suite for globalCardRules {
         heroVersion = `Flex -> `HV0
     }
 
-    // negative example: champion cannot carry hero/evolution designation.
+    // negative example: champion cannot carry hero or evolution designation
     example globalRulesRejectChampionWithSpecialDesignation is {not globalCardRules} for {
         Card = `Champ
         Rarity = `Common + `Rare + `Epic + `Legendary + `ChampionRarity
@@ -155,13 +171,15 @@ test suite for globalCardRules {
     assert {globalCardRules and championHasHeroOrEvolutionInsideGlobalRules} is unsat for exactly 2 Card, exactly 1 EvolutionVersion, exactly 1 HeroVersion
 }
 
+// helper predicates should be independently realizable.
 test suite for helperPredicates {
-    // helper predicates should be independently realizable.
     assert {helperPredicates and helperPredicatesAgree} is sat for exactly 3 Card, exactly 1 EvolutionVersion, exactly 1 HeroVersion
 }
 
+
+// validate full deck constraints with one passing and one failing concrete ex
 test suite for validDeck {
-    // positive example: exactly 8 chosen, at most 2 active evolutions, at most 2 champion/hero total.
+    // positive example w/ exactly 8 chosen, at most 2 active evolutions, at most 2 champion/hero total.
     example validDeckConcretePass is {some d: Deck | validDeck[d]} for {
         Boolean = `T + `F
         True = `T
@@ -220,7 +238,7 @@ test suite for validDeck {
             `D0 -> `C4 -> False + `D0 -> `C5 -> False + `D0 -> `C6 -> False + `D0 -> `C7 -> False
     }
 
-    // negative example: this tries to activate evolution on a non-evolution card.
+    // negative example which this tries to activate evolution on a non-evolution card.
     example validDeckRejectsActiveEvolutionWithoutCardEvolution is {not (some d: Deck | validDeck[d])} for {
         Boolean = `T + `F
         True = `T
@@ -286,6 +304,8 @@ test suite for validDeck {
     assert {some d: Deck | validDeck[d]} and tooManyChampionOrHeroInsideValidDeck is unsat for exactly 10 Card, exactly 1 Deck
 }
 
+// final checks for model, make sure predicates hold together for the pool of
+// card we set up
 test suite for modelChecks {
     assert {modelChecks and someValidDeckExists} is sat for exactly 20 Card, exactly 1 Deck, exactly 10 EvolutionVersion, exactly 10 HeroVersion
     assert {modelChecks and currentCardPoolSize} is sat for exactly 116 Card

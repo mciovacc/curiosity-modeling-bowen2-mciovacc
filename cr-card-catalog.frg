@@ -1,14 +1,10 @@
 #lang forge/froglet
 open "curiosity-modeling.frg"
 
-// ---------------------------
-// Card-data catalog (CSV-backed)
-// ---------------------------
-
 // This section is generated from `cr-cards.csv` (116 active cards).
 // Because Froglet does not support sig-body constraints, concrete card
 // identities are declared as singleton sigs and all field assignments are
-// centralized in `cardCatalogData`.
+// centralized in `cardCatalogData`
 
 one sig Archers, Arrows, BabyDragon, Balloon, Bandit, BarbarianBarrel, BarbarianHut, Barbarians, Bats, BattleHealer, BattleRam, Berserker, Bomber, BombTower, BossBandit, Bowler, Cannon, CannonCart, Clone, DartGoblin, DarkPrince, Earthquake, EliteBarbarians, ElectroDragon, ElectroGiant, ElectroSpirit, ElectroWizard, ElixirCollector, ElixirGolem, Executioner, FireSpirit, Fireball, Firecracker, Fisherman, FlyingMachine, Freeze, Giant, GiantSkeleton, GiantSnowball, GoblinBarrel, GoblinCage, GoblinCurse, GoblinDemolisher, GoblinDrill, GoblinGang, GoblinGiant, GoblinMachine, Goblins, Goblinstein, GoldenKnight, Golem, Graveyard, Guards, HealSpirit, HogRider, Hunter, IceGolem, IceSpirit, IceWizard, InfernoDragon, InfernoTower, Knight, LavaHound, Lightning, LittlePrince, Lumberjack, MagicArcher, MegaKnight, MegaMinion, MightyMiner, Miner, MiniPEKKA, MinionHorde, Minions, Mirror, Monk, MotherWitch, Musketeer, NightWitch, PEKKA, Phoenix, Poison, Princess, Prince, Rage, RamRider, Rascals, Rocket, RoyalDelivery, RoyalGiant, RoyalGhost, RoyalHogs, RoyalRecruits, RuneGiant, SkeletonArmy, SkeletonBarrel, SkeletonDragons, SkeletonKing, Skeletons, Sparky, SpearGoblins, SpiritEmpress, SuspiciousBush, Tesla, TheLog, ThreeMusketeers, Tombstone, Tornado, Valkyrie, Vines, WallBreakers, Witch, Wizard, XBow, Zap, Zappies extends Card {}
 one sig EvoArchers, EvoBabyDragon, EvoBarbarians, EvoBats, EvoBattleRam, EvoBomber, EvoCannon, EvoDartGoblin, EvoElectroDragon, EvoExecutioner, EvoFirecracker, EvoGiantSnowball, EvoGoblinBarrel, EvoGoblinCage, EvoGoblinDrill, EvoGoblinGiant, EvoHunter, EvoIceSpirit, EvoInfernoDragon, EvoKnight, EvoLumberjack, EvoMegaKnight, EvoMusketeer, EvoPEKKA, EvoRoyalGiant, EvoRoyalHogs, EvoRoyalRecruits, EvoSkeletonArmy, EvoSkeletonBarrel, EvoSkeletons, EvoTesla, EvoValkyrie, EvoWallBreakers, EvoWitch, EvoWizard, EvoZap extends EvolutionVersion {}
@@ -714,15 +710,15 @@ pred cardCatalogData {
 }
 
 
-// Starter commands for exploration on the concrete CSV-backed dataset.
+// Starter commands for exploration on the concrete CSV-backed dataset
 run {
   cardCatalogData
   someValidDeckExists
 } for 5 Int, exactly 116 Card, exactly 1 Deck, exactly 36 EvolutionVersion, exactly 9 HeroVersion
 
-// Sanity probe: this should be UNSAT if the CSV respects the champion rule.
-run {
-  cardCatalogData
-  globalCardRules
-  some c: Card | c.rarity = ChampionRarity and (some c.evolutionVersion or some c.heroVersion)
-} for 5 Int, exactly 116 Card, exactly 36 EvolutionVersion, exactly 9 HeroVersion
+// this should be UNSAT if the CSV respects the champion rule, comment out
+// run {
+//   cardCatalogData
+//   globalCardRules
+//   some c: Card | c.rarity = ChampionRarity and (some c.evolutionVersion or some c.heroVersion)
+// } for 5 Int, exactly 116 Card, exactly 36 EvolutionVersion, exactly 9 HeroVersion
